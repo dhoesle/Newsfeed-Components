@@ -89,7 +89,6 @@ const data = [
 ];
 
 /* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
-
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -111,3 +110,31 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+function articleMaker(object){
+  let div = document.createElement('div')
+  div.classList.add('article')
+  let h2 = document.createElement('h2')
+  h2.innerHTML = object.title
+  let p = document.createElement('p')
+  p.classList.add('date')
+  p.innerHTML = object.date
+  let paragraph1 = document.createElement('p')
+  paragraph1.innerHTML = object.firstParagraph
+  let paragraph2 = document.createElement('p')
+  paragraph2.innerHTML = object.secondParagraph
+  let paragraph3 = document.createElement('p')
+  paragraph3.innerHTML = object.thirdParagraph
+  let span = document.createElement('span')
+  span.classList.add('expandButton')
+  // span.addEventListener('')
+  div.appendChild(h2)
+  div.appendChild(p)
+  div.appendChild(paragraph1)
+  div.appendChild(paragraph2)
+  div.appendChild(paragraph3)
+  div.appendChild(span)
+  console.log("articleMaker -> div", div)
+}
+let arrayOfArticles = data.map(obj => articleMaker(obj))
+
