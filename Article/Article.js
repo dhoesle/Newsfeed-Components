@@ -170,7 +170,7 @@ function articleMaker(object){
   paragraph1.innerHTML = object.firstParagraph
   paragraph2.innerHTML = object.secondParagraph
   paragraph3.innerHTML = object.thirdParagraph
-  span.innerHTML = 'click here'
+  span.innerHTML = 'expand'
   
   
   div.appendChild(h2)
@@ -184,7 +184,6 @@ function articleMaker(object){
   // articleOpen.classList.add('article-open')
   span.addEventListener('click', event => {
     div.classList.toggle('article-open')
-    div.classList.toggle('article-close')
   })
   return div;
 }
